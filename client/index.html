@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html manifest="client.manifest"> 
+<head> 
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="apple-touch-icon" href="icon.ios.png"/>
+	<link rel="apple-touch-startup-image" href="startup.png" />
+	<link rel="stylesheet" href="tetris.css" type="text/css" media="screen, mobile" title="main" charset="utf-8">
+
+	<title>longink</title> 
+	<link rel="stylesheet" href="lib/jquery.mobile-1.0a3/jquery.mobile-1.0a3.min.css" />
+
+	<!-- <script src="lib/phonegap-0.9.3.js"></script> -->
+	<script src="phonegap.js"></script>
+	<script type="text/javascript" src="lib/jquery-1.5.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.mobile-1.0a3/jquery.mobile-1.0a3.min.js"></script>
+	
+	<script src="lib/jquery.timeago.js"></script>	
+	<script src="lib/json2.js"></script>
+	<script src="lib/underscore-min.js"></script>
+	<script src="lib/backbone-min.js"></script>
+	<script src="lib/backbone.localStorage.js"></script>
+	
+	<script src="lib/coffee-script.js" type="text/javascript" charset="utf-8"></script>
+	<script src="client.coffee" type="text/coffeescript" charset="utf-8"></script>
+	
+</head> 
+<body> 
+<div id="article-list-page" data-role="page">
+	<div data-role="header" data-position="fixed">
+		<a id="clear-button" href="#" data-icon="delete">Clear</a>
+		<h1>longink</h1>
+		<a id="refresh-button" href="#" data-icon="refresh" class="ui-btn-right">Refresh</a>
+	</div>
+	<div id="article-list-view" data-role="content">
+	</div>
+</div>
+
+<div id="article-detail-page" data-role="page">
+	<div data-role="header" data-position="fixed">
+		<h1 id="article-title"></h1>
+		<a id="article-original-button" href="#" target=”_blank” data-icon="arrow-r" class="ui-btn-right">Original</a>
+	</div>
+	<div id="article-detail-view" data-role="content" data-theme="a">
+	</div>
+</div>
+
+<!-- Templates -->
+<script id="article-list-view-template" type="text/template">
+		<ul data-role="listview" data-filter="false" data-theme="a">
+			<% articles.each(function(article) { %>
+			  <li><a href="#" data-cid="<%= article.cid %>">
+					<%= article.get('title') %>
+				</a></li>
+			<% }); %>
+		</ul>
+</script>
+
+<script id="article-detail-view-template" type="text/template">
+	<%= article.get('content') %>
+</script>
+
+
+
+</body>
+</html>
