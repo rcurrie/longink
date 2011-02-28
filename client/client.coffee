@@ -1,4 +1,6 @@
 $ ->
+	# $.ajaxSetup { "error": (e, xhr, settings, exception) -> alert("Error" + e + xhr + settings + exception)}
+
 	#==============================================================================
 	# Models
 	class ArticleModel extends Backbone.Model
@@ -11,17 +13,19 @@ $ ->
 			-1 * article.get "timeStamp"
 
 		downloadArticle: (link, title) =>
+			# JSONP so we can get around the cross domain restrictions for HTML5
 			console.log 'GETing ' + title + ' ' + link
-			$.getJSON "http://viewtext.org/api/text?url=" + link + "&callback=?", (data) ->
+			jqxhr = $.getJSON "http://viewtext.org/api/text?url=" + link + "&callback=?", (data) ->
 				console.log 'Got ' + link
 				articles.create {title: title, link: link, timeStamp: new Date(), content: data.content}
-				
+			jqxhr.error(-> alert("ajax error") )
+
 		updateFromHN: (callback) =>
 			console.log 'Starting update of hnews'
 			$.ajax {
-				# url: "http://news.ycombinator.com/rss"
-				url: "http://longink.ampdat.com/articles"
-				# url: "/articles"
+				# if in phonegap access server explicitly, otherwise relative
+				# so we can test on local server - 'device' defined if running in phonegap
+				url: if device? then "http://longink.ampdat.com/articles" else "/articles"
 				dataType: "xml"
 				error: (xhr, errMsg, err) ->
 					console.log "Error getting hnews rss feed " + errMsg

@@ -1,5 +1,38 @@
 CACHE MANIFEST
-# Version 0000090
+# version 00000000
 
 NETWORK:
-*
+articles
+
+CACHE:
+client.coffee
+icon.ios.png
+icon.original.png
+icon.png
+index.html
+lib/backbone-min.js
+lib/backbone.js
+lib/backbone.localStorage.js
+lib/coffee-script.js
+lib/jquery-1.5.1.js
+lib/jquery-1.5.1.min.js
+lib/jquery.mobile-1.0a3/images/ajax-loader.png
+lib/jquery.mobile-1.0a3/images/form-check-off.png
+lib/jquery.mobile-1.0a3/images/form-check-on.png
+lib/jquery.mobile-1.0a3/images/form-radio-off.png
+lib/jquery.mobile-1.0a3/images/form-radio-on.png
+lib/jquery.mobile-1.0a3/images/icon-search-black.png
+lib/jquery.mobile-1.0a3/images/icons-18-black.png
+lib/jquery.mobile-1.0a3/images/icons-18-white.png
+lib/jquery.mobile-1.0a3/images/icons-36-black.png
+lib/jquery.mobile-1.0a3/images/icons-36-white.png
+lib/jquery.mobile-1.0a3/jquery.mobile-1.0a3.css
+lib/jquery.mobile-1.0a3/jquery.mobile-1.0a3.js
+lib/jquery.mobile-1.0a3/jquery.mobile-1.0a3.min.css
+lib/jquery.mobile-1.0a3/jquery.mobile-1.0a3.min.js
+lib/jquery.timeago.js
+lib/json2.js
+lib/phonegap-0.9.3.js
+lib/underscore-min.js
+lib/underscore.js
+startup.png

@@ -15,6 +15,7 @@ httpServer = http.createServer (request, response) ->
 			response.end()
 
 		when '/articles'
+			console.log 'Serving up articles'
 			httpRequest = http.get { host: 'news.ycombinator.com', port: 80, path: '/rss'}, (httpResponse) ->
 				httpResponse.on 'data', (chunk) ->
 					response.write chunk, 'binary'
