@@ -138,7 +138,7 @@
         return articleDetailView.render();
       }
     });
-    $('#article-detail-view').bind('swiperight', function() {
+    return $('#article-detail-view').bind('swiperight', function() {
       var i;
       i = articles.indexOf(articleDetailView.model);
       if (i > 0) {
@@ -146,6 +146,5 @@
         return articleDetailView.render();
       }
     });
-    return console.log("Foobarl...sdf");
   });
 }).call(this);

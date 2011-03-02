@@ -95,5 +95,3 @@ $ ->
 		if i > 0
 			articleDetailView.model = articles.at(i-1)
 			articleDetailView.render()
-			
-	console.log "Foobarl...sdf"
