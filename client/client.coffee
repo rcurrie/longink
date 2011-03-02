@@ -1,6 +1,4 @@
 $ ->
-	# $.ajaxSetup { "error": (e, xhr, settings, exception) -> alert("Error" + e + xhr + settings + exception)}
-
 	#==============================================================================
 	# Models
 	class ArticleModel extends Backbone.Model
@@ -15,16 +13,14 @@ $ ->
 		downloadArticle: (link, title) =>
 			# JSONP so we can get around the cross domain restrictions for HTML5
 			console.log 'GETing ' + title + ' ' + link
-			jqxhr = $.getJSON "http://viewtext.org/api/text?url=" + link + "&callback=?", (data) ->
+			$.getJSON "http://viewtext.org/api/text?url=" + link + "&callback=?", (data) ->
 				console.log 'Got ' + link
 				articles.create {title: title, link: link, timeStamp: new Date(), content: data.content}
-			jqxhr.error(-> alert("ajax error") )
 
 		updateFromHN: (callback) =>
 			console.log 'Starting update of hnews'
 			$.ajax {
-				# if in phonegap access server explicitly, otherwise relative
-				# so we can test on local server - 'device' defined if running in phonegap
+				# relative url unless running inside phonegap
 				url: if device? then "http://longink.ampdat.com/articles" else "/articles"
 				dataType: "xml"
 				error: (xhr, errMsg, err) ->
@@ -99,3 +95,5 @@ $ ->
 		if i > 0
 			articleDetailView.model = articles.at(i-1)
 			articleDetailView.render()
+			
+	console.log "Foobarl...sdf"
