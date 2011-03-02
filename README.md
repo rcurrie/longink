@@ -1,8 +1,8 @@
 # longink
 Offline HTML5/iOS/Android/Playbook feed and web page reader
 
-## Demo
 [http://longink.ampdat.com](http://longink.ampdat.com)
+
 * On an iOS or Playbook device, save a bookmark to the desktop to try out offline usage
 * Wrap in phonegap, point www folder to the 'client' folder, build and run
 
