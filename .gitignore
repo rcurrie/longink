@@ -1,1 +1,4 @@
 .DS_Store
+server/node_modules/**/*
+client/lib/**/*
+data/*

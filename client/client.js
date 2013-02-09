@@ -40,9 +40,12 @@
         });
       };
       ArticleCollection.prototype.updateFromHN = function(callback) {
+        var articlesURL;
         console.log('Starting update of hnews');
+        articlesURL = typeof device != "undefined" && device !== null ? "http://longink.ampdat.com/articles" : "/articles";
+        console.log("articlesURL = " + articlesURL);
         return $.ajax({
-          url: typeof device != "undefined" && device !== null ? "http://longink.ampdat.com/articles" : "/articles",
+          url: articlesURL,
           dataType: "xml",
           error: function(xhr, errMsg, err) {
             return console.log("Error getting hnews rss feed " + errMsg);

@@ -6,11 +6,15 @@ articles
 *
 
 CACHE:
-client.js
+index.html
+client.coffee
 apple-touch-icon.png
 icon.original.png
 icon.png
-index.html
+startup.png
+phonegap.js
+lib/phonegap-0.9.3.js
+lib/coffee-script.js
 lib/backbone-min.js
 lib/backbone.js
 lib/backbone.localStorage.js
@@ -33,7 +37,5 @@ lib/jquery.mobile-1.0a3/jquery.mobile-1.0a3.min.js
 lib/jquery.timeago.js
 lib/async.js
 lib/json2.js
-lib/phonegap.js
 lib/underscore-min.js
 lib/underscore.js
-startup.png

@@ -18,7 +18,7 @@ $ ->
 				articles.create {title: title, link: link, timeStamp: new Date(), content: data.content}
 
 		updateFromHN: (callback) =>
-			console.log 'Starting update of hnews'
+			console.log 'Starting update of hacker news feed'
 			$.ajax {
 				# relative url unless running inside phonegap
 				url: if device? then "http://longink.ampdat.com/articles" else "/articles"
@@ -38,7 +38,7 @@ $ ->
 
 	articles = new ArticleCollection()
 	articles.fetch()
-
+		
 	#==============================================================================
 	# Views
 	class ArticleDetailView extends Backbone.View
