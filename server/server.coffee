@@ -2,9 +2,9 @@ http = require 'http'
 url = require 'url'
 util = require 'util'
 fs = require 'fs'
-static = require 'node-static'
+nodeStatic = require 'node-static'
 
-staticServer = new static.Server('../client')
+staticServer = new nodeStatic.Server('../client')
 
 httpServer = http.createServer (request, response) ->
 	command = url.parse(request.url, true)
