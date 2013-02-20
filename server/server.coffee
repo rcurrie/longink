@@ -6,6 +6,7 @@ nodeStatic = require 'node-static'
 
 staticServer = new nodeStatic.Server('../client')
 
+#==============================================================================
 httpServer = http.createServer (request, response) ->
 	command = url.parse(request.url, true)
 	switch command.pathname			
