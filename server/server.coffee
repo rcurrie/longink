@@ -28,5 +28,5 @@ httpServer = http.createServer (request, response) ->
 				console.log("Servicing static request to " + request.url)
 				staticServer.serve(request, response)
 
-httpServer.listen(8000)
-console.log 'Server listening on port 8000'
+httpServer.listen(3000)
+console.log 'Server listening on port 3000'
