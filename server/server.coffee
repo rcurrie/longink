@@ -12,7 +12,7 @@ httpServer = http.createServer (request, response) ->
 	switch command.pathname			
 		when '/status'
 			response.writeHead 200, {'Content-Type': 'text/html'}
-			response.write 'Server up and running\n'
+			response.write 'Longink server is up and running\n'
 			response.end()
 
 		when '/articles'
